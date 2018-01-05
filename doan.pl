@@ -31,7 +31,7 @@ vp(vp(X, Y), Z) --> advp(X), vp(Y,Z).
 vp(vp(X, Y), Z) --> vb(X, Z, A), np(Y, A).
 vp(vp(X, Y), Z) --> vb(X, Z, A), vp(Y,A).
 vp(vp(X, Y), Z) --> np(X, Z), vp(Y, Z).
-vp(vp(X, Y), Z) --> cd(X), np(Y,A).
+np(np(X, Y), Z) --> cd(X), np(Y,A).
 np(np(X, Y),Z) --> unn(X, Z), nn(Y,Z).
 np(np(X, Y, T),Z) --> nnp(X,A), unn(Y, Z), nn(T,Z).
 np(np(X, Y, T), Z) --> unn(X, Z), nn(Y, Z), adjp(T).
@@ -45,3 +45,4 @@ np(np(X,Y),Z) --> advp(X), np(Y,Z).
 
 
 s(s(X, Y)) --> np(X, Z), vp(Y, Z).
+s(s(X, Y, Z)) --> s(X), cc(Y), s(Z).
