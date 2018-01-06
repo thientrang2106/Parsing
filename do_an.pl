@@ -2,6 +2,7 @@ nnp(nnp(nam), human) --> [nam].
 rb(rb(hay)) --> [hay].
 rb(rb(rat)) --> [rat].
 vb(vb(thich), human, T) --> [thich].
+vb(vb(hay), human, library) --> [hay].
 vb(vb(doc), human, book) --> [doc].
 nn(nn(sach), book) --> [sach].
 in(in(o), library) --> [o].
@@ -24,7 +25,6 @@ np(np(X, Y, Z), A) --> nnp(X, A), cc(Y), nnp(Z, A).
 np(np(X, Y), Z) --> dt(X), np(Y, Z).
 pp(pp(X, Y), Z) --> in(X, Z), np(Y, Z).
 advp(advp(X)) --> rb(X).
-vp(vp(X, Y), Z) --> advp(X), vp(Y,Z).
 vp(vp(X,Y),Z) --> vb(X,Z,A), pp(Y,A).
 vp(vp(X, Y, L), Z) --> vb(X, Z, A), np(Y,A), pp(L,T).
 vp(vp(X, Y), Z) --> advp(X), vp(Y,Z).
@@ -37,7 +37,7 @@ np(np(X, Y, T),Z) --> nnp(X,A), unn(Y, Z), nn(T,Z).
 np(np(X, Y, T), Z) --> unn(X, Z), nn(Y, Z), adjp(T).
 np(np(X,Y),Z) --> adjp(X), pp(Y,Z).
 np(np(X, Y, T), Z) --> unn(X, Z), nn(Y, Z), np(T,A).
-np(np(X, Y, T,E),Z) --> nnp(X,A), unn(Y, Z), nn(T,Z), adjp(E).
+np(np(X, Y),Z) --> nnp(X,A), np(Y, Z).
 np(np(Y, T), Z) --> nn(Y, Z), adjp(T).
 adjp(adjp(X)) --> jj(X).
 adjp(adjp(X, Y)) --> rb(X), jj(Y).
