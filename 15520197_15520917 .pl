@@ -45,5 +45,5 @@ np(np(X,Y),Z) --> advp(X, T), np(Y,Z).
 
 
 s(s(X, Y)) --> np(X, Z), vp(Y, Z, T).
-s1(s(X, Y)) --> np(X, Z), vp(Y, Z, T).
+s1(s1(X, Y)) --> np(X, Z), vp(Y, Z, T).
 s(s(X, Y, Z)) --> s1(X), cc(Y), s(Z).
